@@ -1,20 +1,20 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Objects
+namespace AlbumList.Objects
 {
   public class Category
   {
     private static List<Category> _instances = new List<Category> {};
     private string _name;
     private int _id;
-    private List<Task> _tasks;
+    private List<CD> _CDs;
 
     public Category(string categoryName)
     {
       _name = categoryName;
       _instances.Add(this);
       _id = _instances.Count;
-      _tasks = new List<Task>{};
+      _CDs = new List<CD>{};
     }
 
     public string GetName()
@@ -25,13 +25,13 @@ namespace ToDoList.Objects
     {
       return _id;
     }
-    public List<Task> GetTasks()
+    public List<CD> GetCDs()
     {
-      return _tasks;
+      return _CDs;
     }
-    public void AddTask(Task task)
+    public void AddCD(CD CD)
     {
-      _tasks.Add(task);
+      _CDs.Add(CD);
     }
     public static List<Category> GetAll()
     {

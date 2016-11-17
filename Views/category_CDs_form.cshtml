@@ -1,0 +1,9 @@
+<h1>Add a new CD to @Model["category"].GetName()</h1>
+<form action='/CDs' method='post'>
+  <input id='category-id' name='category-id' type='hidden' value='@Model["category"].GetId()'>
+  <label for='CD-description'>CD description</label>
+  <input id='CD-description' name='CD-description' type='text'>
+  <label for='CD-artist'>CD Artist</label>
+  <input id='CD-artist' name='CD-artist' type='text'>
+  <button type='submit'>Add CD</button>
+</form>

@@ -1,18 +1,27 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Objects
+namespace AlbumList.Objects
 {
-  public class Task
+  public class CD
   {
     private string _description;
+    private string _artist;
     private int _id;
-    private static List<Task> _instances = new List<Task> {};
+    private static List<CD> _instances = new List<CD> {};
 
-    public Task (string description)
+    public CD (string description, string artist)
     {
       _description = description;
+      _artist = artist;
       _instances.Add(this);
       _id = _instances.Count;
+    }
+
+    public string GetArtist() {
+      return _artist;
+    }
+    public void SetArtist(string artist) {
+      _artist = artist;
     }
 
     public string GetDescription()
@@ -28,7 +37,7 @@ namespace ToDoList.Objects
     {
       return _id;
     }
-    public static List<Task> GetAll()
+    public static List<CD> GetAll()
     {
       return _instances;
     }
@@ -36,7 +45,7 @@ namespace ToDoList.Objects
     {
       _instances.Clear();
     }
-    public static Task Find(int searchId)
+    public static CD Find(int searchId)
     {
       return _instances[searchId-1];
     }

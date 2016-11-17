@@ -1,3 +1,19 @@
-<h1>To Do List</h1>
-<h3><a href='/categories'>View categories</a></h3>
-<h3><a href='/categories/new'>Add a new category</a></h3>
+<h1>Album Collection</h1>
+@if (@Model.Count == 0)
+{
+  <h3>Welcome to the Album Collection-tron 3000! Please give me Albums to Collection-ize below: </h3>
+  <h3><a href='/categories/new'>Add a new category</a></h3>
+} else {
+  @foreach (var category in @Model)
+  {
+    <ul>@category.GetName()
+    @foreach (var album in category.GetCDs())
+    {
+      <li>@album.GetDescription() by @album.GetArtist()</li>
+    }
+    </ul>
+  }
+  <h3><a href='/categories'>View categories</a></h3>
+  <h3><a href='/categories/new'>Add a new category</a></h3>
+  <h3><a href='/search'>Search for Album by artist</a></h3>
+}

@@ -1,0 +1,7 @@
+<h2>The Collection-tron 3000 found the following albums:</h2>
+@foreach (var album in @Model)
+{
+  <li>@album.GetDescription() by @album.GetArtist()</li>
+}
+
+<p><a href='/'>Back home</a></p>
